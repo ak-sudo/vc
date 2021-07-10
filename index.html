@@ -91,6 +91,16 @@
 <br>
 <video id="localVideo" autoplay></video>
 <video id="remoteVideo" autoplay autoPictureInPicture></video>
+<button id="pipButtonElement" style="align-items: center; display: flex; justify-content: center; padding-left: 5%;">View Your Friend On Floating Tab</button>
+<script>
+  pipButtonElement.addEventListener('click', async function() {
+  pipButtonElement.disabled = true;
+
+  await remoteVideo.requestPictureInPicture();
+
+  pipButtonElement.disabled = false;
+  });
+</script>
   <script src="/vc/script.js"></script>
 </body>
 </html>
